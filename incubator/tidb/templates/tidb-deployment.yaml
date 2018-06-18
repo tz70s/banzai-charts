@@ -26,8 +26,6 @@ spec:
         ports:
           - containerPort: {{ .Values.tidb.service.mysql }}
           - containerPort: {{ .Values.tidb.service.status }}
-        args: ["-L=info", "--store=tikv", "--path=pd:2379?cluster=1", "-P=4000"]
-
         env:
         - name: MY_POD_IP
           valueFrom:
@@ -40,7 +38,9 @@ spec:
         - |
           /tidb-server \
           --store=tikv \
-          --path="{{ template "tidb.fullname" . }}-pd:{{ .Values.pd.service.ClientPort }}"
+          --path="{{ template "tidb.fullname" . }}-pd:{{ .Values.pd.service.ClientPort }}" \
+          --metrics-addr=prometheus-pushgateway.default.svc:9091 \
+          --metrics-interval=14
 
         resources:
 {{ toYaml .Values.tidb.resources | indent 10 }}

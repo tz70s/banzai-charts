@@ -12,7 +12,7 @@ pd:
   ## ref: https://hub.docker.com/r/pingcap/pd/tags/
   ##
   ## Default: none
-  image: pingcap/pd:v1.0.5
+  image: pingcap/pd
 
   replicaCount: 3
 
@@ -58,7 +58,7 @@ tidb:
   ## ref: https://hub.docker.com/r/pingcap/tidb/tags/
   ##
   ## Default: none
-  image: pingcap/tidb:v1.0.5
+  image: pingcap/tidb
 
   replicaCount: 2
 
@@ -104,7 +104,7 @@ tikv:
   ## ref: https://hub.docker.com/r/pingcap/tikv/tags/
   ##
   ## Default: none
-  image: pingcap/tikv:v1.0.5
+  image: pingcap/tikv
 
   ## Specify an imagePullPolicy (Required)
   ## It's recommended to change this to 'Always' if the image tag is 'latest'
