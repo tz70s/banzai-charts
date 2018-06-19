@@ -90,8 +90,8 @@ tidb:
   ##
   resources:
     requests:
-      memory: 128Mi
-      cpu: 100m
+      memory: 400Mi
+      cpu: 250m
 
 
 tikv:
@@ -150,6 +150,6 @@ tikv:
   ##
   resources:
     requests:
-      memory: 128Mi
-      cpu: 100m
+      memory: 400Mi
+      cpu: 250m
 
